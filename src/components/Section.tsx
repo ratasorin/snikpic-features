@@ -7,14 +7,21 @@ const Section = () => {
   const [bounds, setBounds] = useState<{ left: number; right: number } | null>(
     null
   );
-  const measureTrack = useCallback((track: HTMLDivElement) => {
-    if (!track) return null;
-    const thumb = track.firstChild as HTMLElement;
-    setBounds({
+
+  const [thumb, setThumb] = useState<HTMLDivElement | null>(null);
+
+  const measureTrack = useCallback(
+    (track: HTMLDivElement) => {
+      if (!track || !thumb) return null;
+      setBounds({
         left: track.clientLeft - thumb.clientWidth / 2,
         right: track.clientWidth - thumb.clientWidth / 2,
-    });
-  }, []);
+      });
+    },
+    [thumb]
+  );
+
+  // const [window, setWindow] = useEffect({});
 
   return (
     <div className="absolute left-0 top-0 w-screen h-screen bg-slate-50 p-6">
@@ -28,8 +35,17 @@ const Section = () => {
         </div>
       </div>
       <div ref={measureTrack} className="relative h-1 w-full bg-red-400 my-5">
-        <Draggable bounds={bounds ? bounds : { left: 0, right: 0 }} axis="x">
-          <div className="absolute w-10 h-5 bg-red-200 -top-2"></div>
+        <Draggable
+          onDrag={(_, data) => {
+            console.log("DRAGGING", data);
+          }}
+          bounds={bounds ? bounds : { left: 0, right: 0 }}
+          axis="x"
+        >
+          <div
+            ref={setThumb}
+            className="absolute w-10 h-5 bg-red-200 -top-2"
+          ></div>
         </Draggable>
       </div>
     </div>
