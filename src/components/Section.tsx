@@ -11,8 +11,8 @@ const Section = () => {
     if (!track) return null;
     const thumb = track.firstChild as HTMLElement;
     setBounds({
-      left: track.clientLeft,
-      right: track.clientWidth - thumb.clientWidth,
+        left: track.clientLeft - thumb.clientWidth / 2,
+        right: track.clientWidth - thumb.clientWidth / 2,
     });
   }, []);
 
