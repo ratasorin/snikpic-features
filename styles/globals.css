@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 .scroll-overlap {
-  overflow: overlay;
+  overflow-x: overlay;
+  overflow-y: visible;
 }
 
 .scroll-overlap::-webkit-scrollbar {
   background: rgba(0, 0, 0, 0.27);
-  height: 8px;
+  height: 20px;
 }
