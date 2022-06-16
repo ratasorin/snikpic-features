@@ -29,15 +29,23 @@ const VerticalBullets = () => {
       </div>
       <div className="flex flex-col items-center">
         <div className="w-7/12 h-36 bg-cyan-400 mb-20"></div>
-        <div className={highlighted}>This section should have a bullet</div>
+        <div className={highlighted} id="mark">
+          This element should have a bullet
+        </div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-40"></div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-52"></div>
-        <div className={highlighted}>This section should have a bullet</div>
+        <div className={highlighted} id="mark">
+          This element should have a bullet
+        </div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-10"></div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-20"></div>
-        <div className={highlighted}>This section should have a bullet</div>
+        <div className={highlighted} id="mark">
+          This element should have a bullet
+        </div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-10"></div>
-        <div className={highlighted}>This section should have a bullet</div>
+        <div className={highlighted} id="mark">
+          This element should have a bullet
+        </div>
         <div className="w-7/12 h-36 bg-cyan-400 mb-20"></div>
       </div>
     </div>
