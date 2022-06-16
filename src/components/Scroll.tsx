@@ -43,10 +43,10 @@ const Section = () => {
 
   const [thumbLeft, setThumbLeft] = useState(0);
   return (
-    <div className="absolute left-0 top-0 w-screen h-screen bg-slate-50 p-6">
+    <div className="relative left-0 top-0 w-screen bg-slate-50">
       <div
         ref={setSlideWindow}
-        className="relative w-full overflow-x-scroll min-h-fit bg-yellow-300"
+        className="relative w-full overflow-x-scroll min-h-fit"
       >
         <div
           style={{
