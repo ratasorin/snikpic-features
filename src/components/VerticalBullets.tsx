@@ -10,7 +10,7 @@ const Circle: FC<{ x: number; y: number }> = ({ x, y }) => {
       height="20"
       width="20"
       style={{
-        position: "absolute",
+        position: "relative",
         left: x,
         top: y,
         zIndex: 1,
@@ -24,7 +24,7 @@ const Circle: FC<{ x: number; y: number }> = ({ x, y }) => {
 const VerticalBullets = () => {
   return (
     <div className="relative w-full bg-stone-300 mt-40">
-      <div className="absolute w-1 h-full bg-slate-500">
+      <div className="absolute w-1 h-full bg-slate-500 flex flex-col items-center">
         <Circle x={0} y={0} />
       </div>
       <div className="flex flex-col items-center">
